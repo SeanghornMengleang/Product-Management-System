@@ -28,12 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormEditCategory";
+            label1 = new Label();
+            txtCategoryName = new TextBox();
+            btnSave = new Button();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(26, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(128, 31);
+            label1.TabIndex = 0;
+            label1.Text = "Category Name";
+            // 
+            // txtCategoryName
+            // 
+            txtCategoryName.Location = new Point(176, 44);
+            txtCategoryName.Multiline = true;
+            txtCategoryName.Name = "txtCategoryName";
+            txtCategoryName.Size = new Size(437, 39);
+            txtCategoryName.TabIndex = 1;
+            txtCategoryName.TextChanged += txtCategoryName_TextChanged;
+            // 
+            // btnSave
+            // 
+            btnSave.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSave.Location = new Point(493, 110);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(120, 41);
+            btnSave.TabIndex = 2;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // FormEditCategory
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(723, 210);
+            Controls.Add(btnSave);
+            Controls.Add(txtCategoryName);
+            Controls.Add(label1);
+            Name = "FormEditCategory";
+            Text = "FormEditCategory";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private TextBox txtCategoryName;
+        private Button btnSave;
     }
 }
