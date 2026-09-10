@@ -37,7 +37,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(43, 35);
+            label1.Location = new Point(46, 52);
             label1.Name = "label1";
             label1.Size = new Size(128, 31);
             label1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // txtCategoryName
             // 
-            txtCategoryName.Location = new Point(221, 21);
+            txtCategoryName.Location = new Point(221, 44);
             txtCategoryName.Multiline = true;
             txtCategoryName.Name = "txtCategoryName";
             txtCategoryName.Size = new Size(473, 48);
@@ -53,19 +53,25 @@
             // 
             // btnSave
             // 
+            btnSave.BackColor = Color.DeepSkyBlue;
             btnSave.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(584, 116);
+            btnSave.ForeColor = Color.White;
+            btnSave.Image = Properties.Resources.save3;
+            btnSave.ImageAlign = ContentAlignment.MiddleRight;
+            btnSave.Location = new Point(600, 114);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(110, 41);
+            btnSave.Size = new Size(94, 41);
             btnSave.TabIndex = 2;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.TextAlign = ContentAlignment.MiddleLeft;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // FormAddCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(800, 228);
             Controls.Add(btnSave);
             Controls.Add(txtCategoryName);

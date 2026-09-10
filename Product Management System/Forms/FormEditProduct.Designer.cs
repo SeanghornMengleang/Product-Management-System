@@ -40,13 +40,18 @@
             // 
             // btnSave
             // 
+            btnSave.BackColor = Color.DeepSkyBlue;
             btnSave.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(509, 231);
+            btnSave.ForeColor = Color.White;
+            btnSave.Image = Properties.Resources.save;
+            btnSave.ImageAlign = ContentAlignment.MiddleRight;
+            btnSave.Location = new Point(523, 240);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(119, 49);
+            btnSave.Size = new Size(105, 40);
             btnSave.TabIndex = 28;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.TextAlign = ContentAlignment.MiddleLeft;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // txtStock
@@ -116,7 +121,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(714, 359);
+            BackColor = Color.FromArgb(255, 192, 255);
+            ClientSize = new Size(714, 320);
             Controls.Add(btnSave);
             Controls.Add(txtStock);
             Controls.Add(txtPrice);

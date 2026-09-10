@@ -54,19 +54,25 @@
             // 
             // btnSave
             // 
+            btnSave.BackColor = Color.DeepSkyBlue;
             btnSave.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(493, 110);
+            btnSave.ForeColor = Color.White;
+            btnSave.Image = Properties.Resources.save1;
+            btnSave.ImageAlign = ContentAlignment.MiddleRight;
+            btnSave.Location = new Point(505, 110);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(120, 41);
+            btnSave.Size = new Size(108, 41);
             btnSave.TabIndex = 2;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.TextAlign = ContentAlignment.MiddleLeft;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // FormEditCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(723, 210);
             Controls.Add(btnSave);
             Controls.Add(txtCategoryName);

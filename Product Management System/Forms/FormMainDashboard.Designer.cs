@@ -35,26 +35,23 @@
             btnAddCategory = new Button();
             txtSearch = new TextBox();
             cmbCategoryFilter = new ComboBox();
-            btnEdit = new Button();
-            btnDelete = new Button();
-            btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
             // 
             // dgv
             // 
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(66, 258);
+            dgv.Location = new Point(78, 258);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
-            dgv.Size = new Size(638, 261);
+            dgv.Size = new Size(638, 347);
             dgv.TabIndex = 0;
             dgv.CellClick += dgv_CellClick;
             // 
             // btnProducts
             // 
             btnProducts.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnProducts.Location = new Point(66, 28);
+            btnProducts.Location = new Point(78, 42);
             btnProducts.Name = "btnProducts";
             btnProducts.Size = new Size(186, 60);
             btnProducts.TabIndex = 1;
@@ -65,7 +62,7 @@
             // btnCategorise
             // 
             btnCategorise.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCategorise.Location = new Point(66, 105);
+            btnCategorise.Location = new Point(78, 125);
             btnCategorise.Name = "btnCategorise";
             btnCategorise.Size = new Size(186, 60);
             btnCategorise.TabIndex = 2;
@@ -76,7 +73,7 @@
             // btnAddProduct
             // 
             btnAddProduct.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddProduct.Location = new Point(508, 26);
+            btnAddProduct.Location = new Point(520, 42);
             btnAddProduct.Name = "btnAddProduct";
             btnAddProduct.Size = new Size(196, 60);
             btnAddProduct.TabIndex = 3;
@@ -87,7 +84,7 @@
             // btnAddCategory
             // 
             btnAddCategory.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddCategory.Location = new Point(508, 100);
+            btnAddCategory.Location = new Point(520, 125);
             btnAddCategory.Name = "btnAddCategory";
             btnAddCategory.Size = new Size(196, 60);
             btnAddCategory.TabIndex = 4;
@@ -98,7 +95,7 @@
             // txtSearch
             // 
             txtSearch.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(65, 188);
+            txtSearch.Location = new Point(78, 206);
             txtSearch.Multiline = true;
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search";
@@ -110,54 +107,19 @@
             // 
             cmbCategoryFilter.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCategoryFilter.FormattingEnabled = true;
-            cmbCategoryFilter.Location = new Point(508, 189);
+            cmbCategoryFilter.Location = new Point(520, 206);
             cmbCategoryFilter.Name = "cmbCategoryFilter";
             cmbCategoryFilter.Size = new Size(196, 33);
             cmbCategoryFilter.TabIndex = 6;
             cmbCategoryFilter.SelectedIndexChanged += cmbCategoryFilter_SelectedIndexChanged;
             cmbCategoryFilter.Click += cmbCategoryFilter_Click;
             // 
-            // btnEdit
-            // 
-            btnEdit.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEdit.Location = new Point(65, 554);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(94, 38);
-            btnEdit.TabIndex = 7;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
-            btnEdit.Click += btnEdit_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(211, 554);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 38);
-            btnDelete.TabIndex = 8;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
-            // 
-            // btnRefresh
-            // 
-            btnRefresh.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRefresh.Location = new Point(354, 554);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(94, 38);
-            btnRefresh.TabIndex = 9;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
-            btnRefresh.Click += btnRefresh_Click_1;
-            // 
             // FormMainDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 192, 192);
             ClientSize = new Size(800, 644);
-            Controls.Add(btnRefresh);
-            Controls.Add(btnDelete);
-            Controls.Add(btnEdit);
             Controls.Add(cmbCategoryFilter);
             Controls.Add(txtSearch);
             Controls.Add(btnAddCategory);
@@ -182,8 +144,5 @@
         private Button btnAddCategory;
         private TextBox txtSearch;
         private ComboBox cmbCategoryFilter;
-        private Button btnEdit;
-        private Button btnDelete;
-        private Button btnRefresh;
     }
 }

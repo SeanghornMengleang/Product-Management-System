@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products));
             dgv = new DataGridView();
             btnClose = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            btnRefresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
             // 
             // dgv
             // 
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(66, 22);
+            dgv.Location = new Point(37, 36);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
             dgv.Size = new Size(672, 337);
@@ -45,20 +49,77 @@
             // 
             // btnClose
             // 
+            btnClose.BackColor = Color.Red;
             btnClose.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnClose.Location = new Point(600, 383);
+            btnClose.ForeColor = Color.White;
+            btnClose.Image = Properties.Resources.close;
+            btnClose.ImageAlign = ContentAlignment.MiddleRight;
+            btnClose.Location = new Point(730, 36);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(138, 45);
+            btnClose.Size = new Size(86, 43);
             btnClose.TabIndex = 1;
             btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
+            btnClose.TextAlign = ContentAlignment.MiddleLeft;
+            btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
+            // 
+            // btnEdit
+            // 
+            btnEdit.BackColor = Color.DodgerBlue;
+            btnEdit.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Image = (Image)resources.GetObject("btnEdit.Image");
+            btnEdit.ImageAlign = ContentAlignment.MiddleRight;
+            btnEdit.Location = new Point(336, 390);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(94, 38);
+            btnEdit.TabIndex = 8;
+            btnEdit.Text = "Edit";
+            btnEdit.TextAlign = ContentAlignment.MiddleLeft;
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.FromArgb(255, 128, 128);
+            btnDelete.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Image = Properties.Resources.delete;
+            btnDelete.ImageAlign = ContentAlignment.MiddleRight;
+            btnDelete.Location = new Point(474, 390);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 38);
+            btnDelete.TabIndex = 9;
+            btnDelete.Text = "Delete";
+            btnDelete.TextAlign = ContentAlignment.MiddleLeft;
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.BackColor = Color.FromArgb(0, 192, 0);
+            btnRefresh.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.ForeColor = Color.White;
+            btnRefresh.Image = Properties.Resources.refresh;
+            btnRefresh.ImageAlign = ContentAlignment.MiddleRight;
+            btnRefresh.Location = new Point(608, 390);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(101, 38);
+            btnRefresh.TabIndex = 10;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.TextAlign = ContentAlignment.MiddleLeft;
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // Products
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 457);
+            BackColor = Color.FromArgb(255, 255, 192);
+            ClientSize = new Size(836, 457);
+            Controls.Add(btnRefresh);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
             Controls.Add(btnClose);
             Controls.Add(dgv);
             Name = "Products";
@@ -72,5 +133,8 @@
 
         private DataGridView dgv;
         private Button btnClose;
+        private Button btnEdit;
+        private Button btnDelete;
+        private Button btnRefresh;
     }
 }
