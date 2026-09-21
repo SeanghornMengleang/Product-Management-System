@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -28,7 +29,7 @@ namespace Product_Management_System.Services
         {
             try
             {
-                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     string query = "SELECT * FROM Products";
@@ -87,7 +88,7 @@ namespace Product_Management_System.Services
                 {
                     try
                     {
-                        string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                        string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                         string query = "DELETE FROM Products WHERE Id = @Id";
 
                         using (SqlConnection conn = new SqlConnection(connString))

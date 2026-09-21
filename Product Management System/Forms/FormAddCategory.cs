@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -30,7 +31,7 @@ namespace Product_Management_System.Forms
                     return;
                 }
 
-                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                 string query = "INSERT INTO Categories (CategoryName) VALUES (@CategoryName)";
 
                 using (SqlConnection conn = new SqlConnection(connString))

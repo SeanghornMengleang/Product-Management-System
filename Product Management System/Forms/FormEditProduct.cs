@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,7 +15,7 @@ namespace Product_Management_System.Forms
     public partial class FormEditProduct : Form
     {
         private int productId;
-        private string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+        private string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
 
         public FormEditProduct(int id, string name, decimal price, int stock, int categoryId)
         {

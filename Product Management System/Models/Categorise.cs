@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -31,7 +32,7 @@ namespace Product_Management_System.Models
         {
             try
             {
-                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     string query = "SELECT * FROM Categories";
@@ -106,7 +107,7 @@ namespace Product_Management_System.Models
                     try
                     {
                         int id = Convert.ToInt32(dgv.SelectedRows[0].Cells["CategoryID"].Value);
-                        string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                        string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
 
                         using (SqlConnection conn = new SqlConnection(connString))
                         {

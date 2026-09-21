@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -23,7 +24,7 @@ namespace Product_Management_System.Forms
         {
             try
             {
-                string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                 string query = "SELECT CategoryId, CategoryName FROM Categories";
 
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -55,7 +56,7 @@ namespace Product_Management_System.Forms
         {
             try
             {
-                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                 string query = "INSERT INTO Products (Name, Price, Stock, CategoryId) VALUES (@Name, @Price, @Stock, @CategoryId)";
 
                 using (SqlConnection conn = new SqlConnection(connString))
