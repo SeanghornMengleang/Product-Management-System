@@ -16,7 +16,7 @@ namespace Product_Management_System.Forms
         public FormAddProduct()
         {
             InitializeComponent();
-            LoadCategories(); 
+            LoadCategories();
         }
 
         private void LoadCategories()
@@ -48,14 +48,14 @@ namespace Product_Management_System.Forms
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
                 string query = "INSERT INTO Products (Name, Price, Stock, CategoryId) VALUES (@Name, @Price, @Stock, @CategoryId)";
 
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -80,6 +80,11 @@ namespace Product_Management_System.Forms
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FormAddProduct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

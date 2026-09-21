@@ -30,7 +30,7 @@ namespace Product_Management_System.Forms
                     return;
                 }
 
-                string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
                 string query = "INSERT INTO Categories (CategoryName) VALUES (@CategoryName)";
 
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -50,6 +50,11 @@ namespace Product_Management_System.Forms
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FormAddCategory_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

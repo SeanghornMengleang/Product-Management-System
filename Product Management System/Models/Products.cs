@@ -87,7 +87,7 @@ namespace Product_Management_System.Services
                 {
                     try
                     {
-                        string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                        string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
                         string query = "DELETE FROM Products WHERE Id = @Id";
 
                         using (SqlConnection conn = new SqlConnection(connString))
@@ -100,8 +100,8 @@ namespace Product_Management_System.Services
                             }
                         }
 
-                        MessageBox.Show("Data deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadProductData();
+                        MessageBox.Show("Product deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadProductData(); 
                     }
                     catch (Exception ex)
                     {
@@ -111,7 +111,7 @@ namespace Product_Management_System.Services
             }
             else
             {
-                MessageBox.Show("Please select a row in the grid to delete!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a product to delete!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -119,7 +119,8 @@ namespace Product_Management_System.Services
         {
             try
             {
-                
+             
+                LoadProductData();
 
                 MessageBox.Show("Data refreshed successfully!", "Refresh", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

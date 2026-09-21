@@ -134,6 +134,7 @@
             Controls.Add(cmbCategory);
             Name = "FormAddProduct";
             Text = "FormAddProduct";
+            Load += FormAddProduct_Load;
             ResumeLayout(false);
             PerformLayout();
         }

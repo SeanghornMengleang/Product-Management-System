@@ -138,7 +138,8 @@ namespace Product_Management_System.Models
         {
             try
             {
-
+          
+                LoadCategoryData();
 
                 MessageBox.Show("Data refreshed successfully!", "Refresh", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -78,6 +78,7 @@
             Controls.Add(label1);
             Name = "FormAddCategory";
             Text = "FormAddCategory";
+            Load += FormAddCategory_Load;
             ResumeLayout(false);
             PerformLayout();
         }

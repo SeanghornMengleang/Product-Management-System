@@ -79,6 +79,7 @@
             Controls.Add(label1);
             Name = "FormEditCategory";
             Text = "FormEditCategory";
+            Load += FormEditCategory_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -33,7 +33,7 @@ namespace Product_Management_System.Forms
         {
             try
             {
-                string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
 
                 string query = "SELECT CategoryId, CategoryName FROM Categories";
 
@@ -58,7 +58,7 @@ namespace Product_Management_System.Forms
         {
             try
             {
-                string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
                 string query = "SELECT * FROM Products";
 
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -108,7 +108,7 @@ namespace Product_Management_System.Forms
                 {
                     try
                     {
-                        string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                        string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
                         string query = "DELETE FROM Products WHERE Id = @Id";
 
                         using (SqlConnection conn = new SqlConnection(connString))
@@ -161,7 +161,7 @@ namespace Product_Management_System.Forms
         {
             try
             {
-                string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
                 string query = "SELECT * FROM Products WHERE Name LIKE @SearchQuery";
 
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -196,7 +196,7 @@ namespace Product_Management_System.Forms
 
             try
             {
-                string connString = "Server=MSI\\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
+                string connString = @"Server=MSI\SQLEXPRESS01;Database=ProductManagementDB;Integrated Security=true;";
                 string query = "SELECT * FROM Products WHERE CategoryId = @CategoryId";
 
                 using (SqlConnection conn = new SqlConnection(connString))
@@ -250,9 +250,7 @@ namespace Product_Management_System.Forms
         {
             try
             {
-                // ហៅមុខងារ Load ឬ Fill ទិន្នន័យរបស់អ្នកឡើងវិញនៅទីនេះ
-                // ឧទាហរណ៍៖ LoadData(); ឬ productTableAdapter.Fill(this.ProductManagementDBDataSet.Products);
-
+                
                 MessageBox.Show("Data refreshed successfully!", "Refresh", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

@@ -61,5 +61,10 @@ namespace Product_Management_System.Forms
                 MessageBox.Show("Error updating category: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void FormEditCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
