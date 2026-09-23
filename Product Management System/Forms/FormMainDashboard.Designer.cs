@@ -35,13 +35,15 @@
             btnAddCategory = new Button();
             txtSearch = new TextBox();
             cmbCategoryFilter = new ComboBox();
+            btnSale = new Button();
+            btnReport = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
             // 
             // dgv
             // 
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(78, 258);
+            dgv.Location = new Point(78, 321);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
             dgv.Size = new Size(638, 347);
@@ -62,7 +64,7 @@
             // btnCategorise
             // 
             btnCategorise.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCategorise.Location = new Point(78, 125);
+            btnCategorise.Location = new Point(78, 115);
             btnCategorise.Name = "btnCategorise";
             btnCategorise.Size = new Size(186, 60);
             btnCategorise.TabIndex = 2;
@@ -95,7 +97,7 @@
             // txtSearch
             // 
             txtSearch.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(78, 206);
+            txtSearch.Location = new Point(78, 272);
             txtSearch.Multiline = true;
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search";
@@ -107,19 +109,43 @@
             // 
             cmbCategoryFilter.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbCategoryFilter.FormattingEnabled = true;
-            cmbCategoryFilter.Location = new Point(520, 206);
+            cmbCategoryFilter.Location = new Point(521, 273);
             cmbCategoryFilter.Name = "cmbCategoryFilter";
             cmbCategoryFilter.Size = new Size(196, 33);
             cmbCategoryFilter.TabIndex = 6;
             cmbCategoryFilter.SelectedIndexChanged += cmbCategoryFilter_SelectedIndexChanged;
             cmbCategoryFilter.Click += cmbCategoryFilter_Click;
             // 
+            // btnSale
+            // 
+            btnSale.Font = new Font("Khmer OS Siemreap", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSale.Location = new Point(78, 191);
+            btnSale.Name = "btnSale";
+            btnSale.Size = new Size(186, 60);
+            btnSale.TabIndex = 7;
+            btnSale.Text = "Sale";
+            btnSale.UseVisualStyleBackColor = true;
+            btnSale.Click += btnSale_Click;
+            // 
+            // btnReport
+            // 
+            btnReport.Font = new Font("Khmer OS Siemreap", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReport.Location = new Point(520, 194);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(197, 60);
+            btnReport.TabIndex = 8;
+            btnReport.Text = "Report";
+            btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
+            // 
             // FormMainDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 192, 192);
-            ClientSize = new Size(800, 644);
+            ClientSize = new Size(800, 690);
+            Controls.Add(btnReport);
+            Controls.Add(btnSale);
             Controls.Add(cmbCategoryFilter);
             Controls.Add(txtSearch);
             Controls.Add(btnAddCategory);
@@ -144,5 +170,7 @@
         private Button btnAddCategory;
         private TextBox txtSearch;
         private ComboBox cmbCategoryFilter;
+        private Button btnSale;
+        private Button btnReport;
     }
 }

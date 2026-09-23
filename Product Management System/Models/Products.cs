@@ -15,6 +15,9 @@ namespace Product_Management_System.Services
 {
     public partial class Products : Form
     {
+       
+        string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
+
         public Products()
         {
             InitializeComponent();
@@ -29,7 +32,6 @@ namespace Product_Management_System.Services
         {
             try
             {
-                string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     string query = "SELECT * FROM Products";
@@ -65,10 +67,10 @@ namespace Product_Management_System.Services
                 int stock = Convert.ToInt32(dgv.SelectedRows[0].Cells["Stock"].Value);
                 int categoryId = Convert.ToInt32(dgv.SelectedRows[0].Cells["CategoryId"].Value);
 
-
                 FormEditProduct editForm = new FormEditProduct(id, name, price, stock, categoryId);
                 editForm.ShowDialog();
 
+                LoadProductData();
             }
             else
             {
@@ -88,7 +90,6 @@ namespace Product_Management_System.Services
                 {
                     try
                     {
-                        string connString = ConfigurationManager.ConnectionStrings["MyShopDB"].ConnectionString;
                         string query = "DELETE FROM Products WHERE Id = @Id";
 
                         using (SqlConnection conn = new SqlConnection(connString))
@@ -102,7 +103,7 @@ namespace Product_Management_System.Services
                         }
 
                         MessageBox.Show("Product deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadProductData(); 
+                        LoadProductData();
                     }
                     catch (Exception ex)
                     {
@@ -120,7 +121,6 @@ namespace Product_Management_System.Services
         {
             try
             {
-             
                 LoadProductData();
 
                 MessageBox.Show("Data refreshed successfully!", "Refresh", MessageBoxButtons.OK, MessageBoxIcon.Information);
