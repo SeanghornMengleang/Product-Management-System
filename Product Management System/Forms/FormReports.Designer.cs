@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTotalPrice = new Label();
+            lblTotalRevenue = new Label();
             dtpStartDate = new DateTimePicker();
             dtpEndDate = new DateTimePicker();
             dgvReports = new DataGridView();
@@ -38,16 +38,16 @@
             ((System.ComponentModel.ISupportInitialize)dgvReports).BeginInit();
             SuspendLayout();
             // 
-            // lblTotalPrice
+            // lblTotalRevenue
             // 
-            lblTotalPrice.AutoSize = true;
-            lblTotalPrice.Font = new Font("Khmer OS Siemreap", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalPrice.Location = new Point(485, 344);
-            lblTotalPrice.Name = "lblTotalPrice";
-            lblTotalPrice.Size = new Size(98, 33);
-            lblTotalPrice.TabIndex = 0;
-            lblTotalPrice.Text = "Total Price";
-            lblTotalPrice.Click += lblTotalRevenue_Click;
+            lblTotalRevenue.AutoSize = true;
+            lblTotalRevenue.Font = new Font("Khmer OS Siemreap", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalRevenue.Location = new Point(485, 344);
+            lblTotalRevenue.Name = "lblTotalRevenue";
+            lblTotalRevenue.Size = new Size(127, 33);
+            lblTotalRevenue.TabIndex = 0;
+            lblTotalRevenue.Text = "Total Revenue";
+            lblTotalRevenue.Click += lblTotalRevenue_Click;
             // 
             // dtpStartDate
             // 
@@ -124,7 +124,7 @@
             Controls.Add(dgvReports);
             Controls.Add(dtpEndDate);
             Controls.Add(dtpStartDate);
-            Controls.Add(lblTotalPrice);
+            Controls.Add(lblTotalRevenue);
             Name = "FormReports";
             Text = "FormReports";
             Load += FormReports_Load_1;
@@ -135,7 +135,7 @@
 
         #endregion
 
-        private Label lblTotalPrice;
+        private Label lblTotalRevenue;
         private DateTimePicker dtpStartDate;
         private DateTimePicker dtpEndDate;
         private DataGridView dgvReports;

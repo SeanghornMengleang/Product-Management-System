@@ -26,7 +26,7 @@ namespace Product_Management_System.Forms
             dtpStartDate.Value = DateTime.Today.AddDays(-30);
             dtpEndDate.Value = DateTime.Today;
 
-            LoadProductReport();
+            LoadSalesReport();
         }
 
         private void FormReports_Load_1(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace Product_Management_System.Forms
             FormReports_Load(sender, e);
         }
 
-        private void LoadProductReport()
+        private void LoadSalesReport()
         {
             if (string.IsNullOrEmpty(connString)) return;
 
@@ -44,31 +44,32 @@ namespace Product_Management_System.Forms
                 {
                     conn.Open();
 
-                    // ទាញទិន្នន័យដោយភ្ជាប់តារាង Products និង Categories ចូលគ្នាเพื่อให้លេចចេញឈ្មោះ Category
-                    string query = @"SELECT p.Id, p.Name, p.Price, p.Stock, c.CategoryName 
-                                     FROM Products p 
-                                     INNER JOIN Categories c ON p.CategoryId = c.CategoryID";
+       
+                    string query = @"SELECT SaleId, SaleDate, TotalAmount 
+                                     FROM Sales 
+                                     WHERE SaleDate >= @StartDate AND SaleDate <= @EndDate";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@StartDate", dtpStartDate.Value.Date);
+                    cmd.Parameters.AddWithValue("@EndDate", dtpEndDate.Value.Date.AddDays(1).AddSeconds(-1));
+
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    // បញ្ចូលទិន្នន័យទៅក្នុង DataGridView
                     dgvReports.DataSource = dt;
 
-                    // គណនាទឹកប្រាក់សរុបនៃតម្លៃទំនិញទាំងអស់ (Total Price)
                     decimal totalRevenue = 0;
                     foreach (DataRow row in dt.Rows)
                     {
-                        if (row["Price"] != DBNull.Value)
+                        if (row["TotalAmount"] != DBNull.Value)
                         {
-                            totalRevenue += Convert.ToDecimal(row["Price"]);
+                            totalRevenue += Convert.ToDecimal(row["TotalAmount"]);
                         }
                     }
 
-
-                    lblTotalPrice.Text = "Total Price: $" + totalRevenue.ToString("0.00");
+                    lblTotalRevenue.Text = "Total Revenue: $" + totalRevenue.ToString("0.00");
                 }
                 catch (Exception ex)
                 {
@@ -79,7 +80,7 @@ namespace Product_Management_System.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            LoadProductReport();
+            LoadSalesReport();
         }
 
         private void dtpSartDate_ValueChanged(object sender, EventArgs e) { }
